@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: CronWorkflow
+metadata:
+  name: wf-cron-name-github
+  namespace: argowf
+spec:
+  schedule: "* * * * *"
+  concurrencyPolicy: "Replace"
+  startingDeadlineSeconds: 0
+  workflowSpec:
+    entrypoint: dag-template-v2
+    serviceAccountName: argowf-serviceaccount
+    templates:
+    - name: dag-template-v2
+      dag:
+        tasks:
+        - name: TaskA
+          template: task-A
+    - name: task-A
+      script:
+        image: python:alpine3.6
+        command: [python]
+        source: |
+          print("Task A wurde ausgeführt!")
