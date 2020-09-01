@@ -4,10 +4,10 @@ metadata:
   name: wf-templ-name-github
   namespace: argowf
 spec:
-  entrypoint: dag-template-v2
+  entrypoint: dag-template-v3
   serviceAccountName: argowf-serviceaccount
   templates:
-  - name: dag-template-v2
+  - name: dag-template-v3
     dag:
       tasks:
       - name: TaskA
