@@ -9,7 +9,5 @@ spec:
   concurrencyPolicy: "Replace"
   startingDeadlineSeconds: 0
   workflowSpec:
-    entrypoint: dag-template-v1
-    serviceAccountName: argowf-serviceaccount
     workflowTemplateRef:
       name: wf-templ-etl-github
