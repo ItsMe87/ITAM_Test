@@ -1,0 +1,20 @@
+  
+apiVersion: argoproj.io/v1alpha1
+kind: CronWorkflow
+metadata:
+  name: wf-cron-master-etl-github
+  namespace: argowf
+spec:
+  schedule: "* * * * *"
+  concurrencyPolicy: "Replace"
+  startingDeadlineSeconds: 0
+  workflowSpec:
+    entrypoint: dag-template-v1
+    serviceAccountName: argowf-serviceaccount
+    templates:
+    - name: dag-template-v1
+      dag:
+        tasks:
+        - name: TaskA
+          workflowTemplateRef:
+            name: wf-templ-etl-github
