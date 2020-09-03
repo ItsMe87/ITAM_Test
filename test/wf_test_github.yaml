@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
-  name: wf-name-github
+  name: wf-test-github
   namespace: argowf
 spec:
-  entrypoint: dag-template-v3
+  entrypoint: dag-template-v1
   serviceAccountName: argowf-serviceaccount
   templates:
-  - name: dag-template-v3
+  - name: dag-template-v1
     dag:
       tasks:
       - name: TaskA
