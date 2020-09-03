@@ -4,10 +4,10 @@ metadata:
   name: wf-test-github
   namespace: argowf
 spec:
-  entrypoint: dag-template-v1
+  entrypoint: dag-template-v2
   serviceAccountName: argowf-serviceaccount
   templates:
-  - name: dag-template-v1
+  - name: dag-template-v2
     dag:
       tasks:
       - name: TaskA
