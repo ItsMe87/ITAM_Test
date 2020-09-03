@@ -5,7 +5,7 @@ metadata:
   name: wf-cron-master-etl-github
   namespace: argowf
 spec:
-  schedule: "* * * * *"
+  schedule: "*/2 * * * *"
   concurrencyPolicy: "Replace"
   startingDeadlineSeconds: 0
   workflowSpec:
