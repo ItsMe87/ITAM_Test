@@ -11,10 +11,5 @@ spec:
   workflowSpec:
     entrypoint: dag-template-v1
     serviceAccountName: argowf-serviceaccount
-    templates:
-    - name: dag-template-v1
-      dag:
-        tasks:
-        - name: TaskA
-          workflowTemplateRef:
-            name: wf-templ-etl-github
+    workflowTemplateRef:
+      name: wf-templ-etl-github
